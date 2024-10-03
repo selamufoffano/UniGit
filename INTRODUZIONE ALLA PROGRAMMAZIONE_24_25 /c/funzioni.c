@@ -1,5 +1,7 @@
 /*come si creare una funzione
 La prima funzione che troviamo è la funzione MAIN
+
+Se all'interno del codice ci sono ripetizoni di codice allora deve essere sostituito con una funzione
 */
 
 #include <stdio.h>
