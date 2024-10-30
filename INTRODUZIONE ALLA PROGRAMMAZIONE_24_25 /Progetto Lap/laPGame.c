@@ -17,40 +17,45 @@ Link utili:
 
 void titleGame()
 {
-    printf("||||||||||||||||||||||||||||||||||||||||||||       ||||||||||||||||||||||||||||||||||||||||||||\n");
-    printf("||                                          laPGame                                          ||\n");
-    printf("||||||||||||||||||||||||||||||||||||||||||||       ||||||||||||||||||||||||||||||||||||||||||||\n");
 }
+
 // Funzione Regole di gioco
 void rules()
 {
     printf("unicode_to_utf8(36)\n");
 }
-int numbPlayer(int nPlayer)
+
+int numPlayerCard(int nPlayer)
 {
 }
+
 void Shuffle()
 {
 }
+
 void giveCard()
 {
 }
+
+void points()
+{
+}
+
 void setStartPlayer()
 {
 }
+
 void startGame()
 {
-    // Print regole
-    rules();
     // Quanri giocatori ci sono (Mi 2, max 20)
 }
+
 void menuGame()
 {
     // stampa tutte opzioni gioco
-    
 }
+
 int main(void)
 {
-    titleGame();
     startGame();
 }
