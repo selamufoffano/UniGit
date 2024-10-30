@@ -44,7 +44,9 @@ int displayShorts(int n)
     for (int i = 0; i < n; i++)
     {
         if (i % 2 == 0)
-            ;
+        {
+            
+        }
         else
         {
             printf("dispari %d \n", i);
@@ -88,9 +90,9 @@ int media(int a, int b)
 
 void display200_2200()
 {
-    
-    //ES 5: Scrivere un programma che visualizzi  tutti i numeri tra 2000 e 2200 (estremi
-    // inclusi) che sono divisibili per 7 ma che non sono multipli di 5
+
+    // ES 5: Scrivere un programma che visualizzi  tutti i numeri tra 2000 e 2200 (estremi
+    //  inclusi) che sono divisibili per 7 ma che non sono multipli di 5
     for (int i = 2000; i < 2200; i++)
     {
         if (i % 7 == 0 && i % 5 == 1)
@@ -100,11 +102,84 @@ void display200_2200()
     }
 }
 
-int restoA_B(int a, int b)
+int resto_A_B(int a, int b)
 {
-    // Es 6: Dati due numeri interi A e B, calcolare il risultato di A/B e A%B usando solo le 
+    // Es 6: Dati due numeri interi A e B, calcolare il risultato di A/B e A%B usando solo le
     // operazioni di somma e sottrazione.
+    int aux = 0;
+    int min, max;
+    if (a > b)
+    {
+        max = a;
+        min = b;
+    }
+    else
+    {
+        max = b;
+        min = a;
+    }
+    // La divisione 10/2, è uguale all'operazione di sottrazione
+    // 10/2 = (10-2), (8-2), (6-2).....
+
+    printf("Operazione di Disione\n");
+    while (max > 0)
+    {
+        printf(" \n%d", max);
+        max = max - min;
+    }
+    printf("\n\nOperazione Resto Zero\n");
+    // Da completare...
+}
+
+int fattoriale(int n)
+{
+    // Dato N, calcolare il valore del fattoriale N!
+    int fattoriale = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        // fattoriale = fattoriale * i;
+        // si può anche scrivere in questo modo:
+        fattoriale *= i; // sono la medisima operazione
+
+        // printf(" \n%d", fattoriale);
+
+        /* al psoto del print dentro la funzione posso fare il return
+         della variabile (però devo chiamare printf dentro il main per
+         vedere il valore)
+        */
+    }
+    return fattoriale;
+}
+
+int fibonacci(int n)
+{
+    // Dato un intero N, calcolare l’N-esimo elemento della successione di Fibonacci
+    // Fibo di 10: 0112357
+    int t1 = 0, t2 = 1, succ;
+    for (int i = 1; i <= n; i++)
+    {
+        printf("%d, ", t1);
+        succ = t1 + t2;
+        t1 = t2;
+        t2 = succ;
+    }
+}
+
+bool funzioneBool(){
+    // Scrivere una funzione che restituisca true se e solo se esistono 2 interi 
+    // positivi tali a,b tali che  𝑎2+𝑏2=25, e che restituisca false altrimenti
+
+    for (int a = 0; a<= 25; a++)
+    {
+        for (int b = 0; b <= 25; b++)
+        {
+            bool exist = a*a + b*b == 25 || 
+        }
+        
+    }
     
+
+
 }
 
 int main(void)
@@ -115,9 +190,12 @@ int main(void)
 
     sommaNnaturali(20);
 
-   displayShorts(20);
+    displayShorts(20);
     media(2, 10);
-   */
     display200_2200();
+    resto_A_B(15, 2);
+    fibonacci(10);
+   */
+    printf("\n%d", fattoriale(7));
     return 0;
 }
