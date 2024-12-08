@@ -4,6 +4,9 @@ Link utili:
 - https://symbl.cc/en/unicode-table/#playing-cards
 */
 
+//Malloc(siezeof(int)*lenth)
+//calloc
+
 // Print TitleGame
 // Print Regole di gioco
 // Inserire il numero di Utenti In gioco
@@ -55,7 +58,20 @@ void menuGame()
     // stampa tutte opzioni gioco
 }
 
+void stampaListeGiocatori(char **liste_giocatori[], int num_giocatori, int num_punteggi=7)
+{
+    for (int i = 0; i < num_giocatori; i++)
+    {
+        printf("Giocatore %d: ", i + 1);
+        for (int j = 0; j < num_punteggi; j++)
+        {
+            printf("%d ", liste_giocatori[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 int main(void)
 {
-    startGame();
+    stampaListeGiocatori()
 }

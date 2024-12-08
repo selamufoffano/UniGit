@@ -5,7 +5,6 @@
 void stampaListeGiocatori(int **liste_giocatori, int num_giocatori, int num_punteggi); // lo lascio dichiarato così non ho nessun obbligo dove posizonare il main
 int numPlayer(int nPlayer);
 
-
 int main()
 {
     int num_giocatori = 3; // Supponiamo di avere 3 giocatori
@@ -20,7 +19,7 @@ int main()
     }
 
     // Allocazione delle liste per ogni giocatore
-    for (int i = 0; i < num_giocatori; i++)
+    for (int i = 0; i < num_giocatori; i++).
     {
         liste_giocatori[i] = malloc(num_punteggi * sizeof(int));
         if (liste_giocatori[i] == NULL)
@@ -39,10 +38,8 @@ int main()
         }
     }
 
-    // Chiamata alla funzione esterna per stampare le liste
     stampaListeGiocatori(liste_giocatori, num_giocatori, num_punteggi);
 
-    // Dealloca la memoria
     for (int i = 0; i < num_giocatori; i++)
     {
         free(liste_giocatori[i]);
@@ -56,7 +53,6 @@ int numPlayer(int nPlayer)
 {
 }
 
-// Definizione della funzione esterna
 void stampaListeGiocatori(int **liste_giocatori, int num_giocatori, int num_punteggi)
 {
     for (int i = 0; i < num_giocatori; i++)

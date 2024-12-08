@@ -44,6 +44,7 @@ int main(void) {
 	scanf("%d", &input_days);
 	years = input_days / 365;
 	input_days = input_days % 365;
+	
 	weeks = input_days / 7;
 	input_days = input_days % 7;
 	printf("years: %d , weeks: %d, days %d.\n",
