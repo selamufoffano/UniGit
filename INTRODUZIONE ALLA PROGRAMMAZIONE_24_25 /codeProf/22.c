@@ -171,6 +171,10 @@ void l_remove_all(list_t **l, int x) {
 
 // per casa: reverse list
 
+void l_vererse () {
+    
+}
+
 int main() {
 
     list_t* l = NULL; // empty
