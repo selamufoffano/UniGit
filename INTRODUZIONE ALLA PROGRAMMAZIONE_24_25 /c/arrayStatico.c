@@ -21,3 +21,4 @@ int main() {
 }
 
 // In questo esempio la memoria è statica ed è inizializzata per salvare 100 caratteri;
+#

@@ -1,0 +1,437 @@
+
+# Marin: 11.02.2025
+### Tipo di dato: 
+un insieme di valori a cui viene assegnato un certo valeore e si eseguono delle operazioni
+### Dato primitivo: 
+### Dato non nativo: 
+### Narrowing
+che cosa si intende per narrowing 
+    char x = `a`;
+    char x = 27;
+come cpp risolve ? 
+    char x {`a};
+    char x {27};  // 
+### Cos'è un oggetto in cpp?:
+un ogetto in cpp è una qualsiasi aree di memoria a cui viene assegnato un tipo, prende il nome di varibile quando l'oggetto prende nome. 
+Esistono oggetti senza nome? (Si,la Malloc in C)
+
+### Bool
+bool a;
+a = (5>3); // Verrà restituito un valore diverso da zero, quindi è TRUE;
+
+Possiamo anche scrivere:
+int x;
+x = (5>3); // Verrà restituito un valore diverso da zero, quindi è TRUE;
+
+### Reference
+in cpp possiamo scrivere anche come: 
+```cpp
+int a;
+int& b=a; // a è un nome alternativo di b
+          // una volta fatto il Refrence non si potrà più modificare, 
+          // non si può spostare il Reference a differenza dei puntatori.
+
+// sono dello stesso tipo, quindi modificando la varibaile "a", 
+// viene modificato anche il valore della variabile "b"
+
+int k;
+b = 12;
+```
+
+# 13_02_25
+# I cicli For, While & Do-While
+### Quali sono gli usi preferenziali dei cicli:
+##### - For: 
+##### - Whiile:
+##### - Do-While:
+Il ciclo più potente che abbiamo  in cpp è il ciclo While, bisogna però essere certi delle condizioni di fine ciclo. 
+Cos'è un linguaggio di Turing completo: Fucked Brain
+
+```c
+int a, b;
+scanf("%d", &a);
+scanf("%d", &b);
+While(while){
+    if(a>b){
+        a=a-b;
+    }else{
+        b=b-a;
+    }
+}
+printf("%d", a);
+
+// possiamo scrivere lo stesso codice con il ciclo For
+for(;a!=b;){} 
+
+// Quali sono i casi in cui il codice non funziona?
+/**
+a = 0
+b = 1
+**/ 
+// Questo algoritmo di Euclide calcola il (MCD)
+
+```
+
+
+# 18_02_25
+
+#### LeftValue RightValue
+Quando una varibiale è di tipo left o right value?
+
+Differenza tra oggetto varibaile?
+. Inizializzare?
+. assegnare?
+
+Tutte le varibili sono oggetti ma non viceversa?
+
+Quanti oggetti ho in:
+```cpp
+int * a=(int) malloc 
+// abbiamo due oggetti:
+// int a, int malloc  
+```
+
+```cpp
+int b;
+a=6b;
+*a=7;
+
+// semantica di un assegnamento: controllo statico
+
+// nel caso in cui abbia (b = b + 1;)
+
+// *(a+1)      a+1
+// value      rvalue
+// 
+```
+Quali sono i modi di passaggio dei valori? cpp e c
+1) copia/valore
+    c: 
+    cpp:
+
+    ```cpp
+            // parametri formali
+    void foo(int a, double b, int* c){
+
+
+    }
+        // parametri effettivi, sono sempre Rightvalue. 
+        // Nei parametri effettivi viene controllato dal compilatore che siano compatibili, quindi posso passare un IintNT su un Double
+    foo(b, w+s, &c) // alla fine della chiamata della funzione foo, viene distrutta
+    ```
+
+2) reference/indirizzo 
+    cpp
+    ```cpp
+    void foo(int a, double b, int* c) // il parametro formale è un aliasi dei paramtri effettivi.
+                                      // dovrò dunque passare lo stesso tipo nei parametri formali
+                                      // Non viene distrutto niente alla fine dell'esecuzione in quanto andrei a distruggere 
+    ```
+3) passaggio per nome
+
+(passaggio per indirizzo vs passggio per indirizzo di copia, non sono la stessa cosa.)
+
+#### Operazioni con puntatori:
+
+```
+       &
+T* + K --> T*
+
+* rvalue --> lvalue
+&a + 7
+
+double v[20];
+v[8] => *(&v[0]+ 8) = 15.3
+```
+```
+int* b = &a;
+int** c = &b;
+
+**c = 14;
+ 
+ 
+```
+
+malloc free --> stdlib (è possibile creare una variabile di nome malloc o free)
+new delete --> nativo del linguaggio. 
+
+```cpp
+// in c:
+int * p = (int*)malloc()
+
+// cpp:
+int* p = new int[20]
+
+// c:
+ free(p)
+
+// cpp:
+delete[] p;
+
+```
+
+#### Tipi di oggetti, oggetti si divido in tre categorie:
+- globali:
+    variabile dichiarata all'esterno di qualsiasi funzione.
+- locali/automatici :
+    muoiono quando si chiude il blocco dove sono dichiarati
+- dinamici : 
+    sono gestiti manualmente dal programmatore e sono terminati con il delete?
+
+
+
+# 25_02_25
+#### Esercizio:
+```cpp
+void fun2(double* p){
+    p= new double [50];
+}
+int main(){
+    double* myv;
+    fun2(myv);
+    for(int i = 0; i<50; i++){
+        myv[i] = 0.0;
+    }
+    delete[] myv;
+    return 0;
+}
+// in   questo programma ci sono errori logici;
+// perchè va in segmantation faull / runtime-error??
+
+
+// se vengono create due NEW devo eliminare due volte 
+
+
+
+
+void fun2(double*& p){
+    p= new double [50];
+}
+int main(){
+    // double myv[50];
+    double* myv;
+    fun2(myv);
+    for(int i = 0; i<50; i++){
+        myv[i] = 0.0;
+    }
+    delete[] myv;
+    return 0;
+}
+
+```
+
+
+#### Vector cpp
+
+int c, i vettori sono: 
+```c
+int v[50];
+```
+
+in cpp:
+```cpp
+int main(){
+    std::vector<int> v; // <int> = instansazione di un template;
+    // in questo caso la size del vettore è = a 0;
+    // se volessi inizializzare un vettore con size = 50:
+    std::vector<int> v[50];
+
+
+    /////////////////////////////////////
+    std::vector<int> v;
+    v.push_back(22); // la size del vettore è = 1
+    v.push_back(3); // possiamo far creascere all'infinito senza conoscere 
+                    // la dimensione della memoria da allocare a priori 
+                    // v[22, 3]
+    v.pop_back(); // per rimuovere un elemento 
+    // v[22]
+
+    // un altro metodo per fare la pop è:
+    v.at(0) = 3;
+
+
+    /////////////////////////////
+    std::vector<int> v;
+    fun(int i=0; i<100; i++){
+        v.push_bach(i+1);
+    }
+    fun(int i=0; i<v.size(); i++){
+       cout<<v.at(i)<<endl;
+    }
+
+
+    // perchè usare foreach? 
+    for (int& x:v){
+        cout<<x<<endl;
+    }
+
+}
+```
+
+passaggio dei parametri con i vettori
+
+```cpp
+// passo by references --> vector<int> & v
+// const reference --> const vector<int> & v
+// passaggio per coppia  --> vector<inr> v 
+
+// il const uso solo quando ho oggetti grandi
+int fun(const vector<int>& v){ // passaggio per copia o per indirizzo? 
+    int s = 0;
+    for(int x: v){
+        s= s+x;
+    }
+    return s;
+}
+
+// è un errore? -->  v.at(3)=s;
+
+
+// funzione v.resize();
+// ho un vettore di size = 10
+// facendo una resize posso perdere o aggiungere;
+// v[0,7,20,4,20,30,40,50,60,70]
+// v.resize(7) --> v[0,7,20,4,20,30,40]
+// v.resize(15) --> vv[0,7,20,4,20,30,40,50,60,70, 0, 0, 0, 0, 0]
+
+// funzione distruttore di classe che cos'è? e a cosa serve?
+```
+
+
+# 27_02_25
+Algoritmo d'ordinamento boobleSort
+
+Invariante di ciclo:
+- come funziona? 
+
+Differenza "at" & "[]"
+```cpp
+/*
+0 1 2 3 4
+1 0 6 5 9
+
+0] [1 6 5 9
+0 1] [6 5 9
+0 1 5] [6 9
+
+dobbiamo considerare il vettore diviso in
+due sezioni, |soglia|
+*/
+void buble(vector<int>& v){
+    for(int soglia=0;soglia<v.size(); soglia++){
+        // prenod l'elemento più piccolo
+        // del range [soglia, size-1] e devo mettere
+        // in posizione soglia
+        for(int i=size-1;i>soglia.size(); i--){ 
+            // come faccio a capire se soglia deve essere ">" 
+            // e non ">="
+            if(v[i]<v[i-1]){
+                swap(v[i], v[i-1]);
+            }
+        }
+    }
+}
+
+void swap(int a, int b){
+    int c = a;
+    a = b;
+    b = c;
+}
+
+
+//////////////////////////
+// size()-1
+void buble(vector<int>& v){
+    for(int soglia=0;soglia<v.size()-1; soglia++){
+        // prenod l'elemento più piccolo
+        // del range [soglia, size-1] e devo mettere
+        // in posizione soglia
+        for(int i=size-1;i>soglia.size(); i--){ 
+            // come faccio a capire se soglia deve essere ">" 
+            // e non ">="
+            if(v[i]<v[i-1]){
+                swap(v[i], v[i-1]);
+            }
+        }
+    }
+}
+
+void swap(int a, int b){
+    int c = a;
+    a = b;
+    b = c;
+}
+
+// come posso ottimizzare il bobleSort?
+// nel caso in cui il vettore sia già ordinato
+// come posso uscire dal senza usare il break
+
+void buble(vector<int>& v){
+    for(int soglia=0;soglia<v.size() -1 && check; soglia++){
+        check = false;
+        for(int i=size-1;i>soglia.size(); i--){ 
+            if(v.at(i)<v.at(i-1)){
+                swap(v[i], v[i-1]);
+                check = true;
+            }
+        }
+    }
+}
+// come posso farlo con il ciclo while ?
+
+// C'è anche un'altro metodo per ottimizzare il bubleSort.
+// controllo soglia che sia soglia...
+
+
+
+```
+
+#### String in cpp
+```cpp
+// link documentazione: https://cplusplus.com/reference/string/string/
+#include <iostream>
+#include <string>
+
+int main(){
+    std::string s; // stringa vuota
+    s="hello world";
+    std::cin>>s;
+    // che tipo di errore è possibile avere con le stringe e la
+    // memoria? standard Buffer
+
+    std::string s2;
+    std::cin>>s2;
+    // a differenza di c in cpp è possibile fare il confronto
+    // anche la somma, > o <
+
+    // il tipo stringa non è nativo di cpp e quindi è necessario 
+    // importare attravero la libreria. 
+    // in cpp è possibile inventarsi il tipo e configurare come gli 
+    // operatori devono comportarsi
+    if(s1==s2){}
+    s + s2;
+    s < s2;
+    s = s2 + "Prova";
+
+    s.size(); 
+    s.length(); 
+    s.resize();
+
+    s[2] = 'a'; 
+    s.at(2) = 'b';
+
+    // come posso fare UPPERCASE di una stringa?
+    for(charr& c:s){ 
+        // ATTENZIONE!!!!!!, Il prof la conversione di un digit 
+        // la volue solo così
+        if(c>='a' && c<='z'){
+            c = c - 'a' + 'A';
+        }
+    }
+    int a = 'x' *  9;
+    char t = '8';
+    int v = t-'o'; // in V va a finire il valore 8;
+    char k = 8;
+}
+
+```
