@@ -435,3 +435,173 @@ int main(){
 }
 
 ```
+
+# 04_03_25
+
+#### Ricorsione:
+Il codice ricorsivo tende ad essere meno performante di un codice riterativo.
+
+Esistono problemi che possono essere risolti riterativamente e non ricorsivamente, e viceversa? 
+No. Ogni programma può essere risolto in entrambi i modi, tuttavia solo se c'è una struttra di dati di tipo stack
+
+Ci sono problemi che non si possono risolvere con la ricorsione / ritarazione? si.. 3° Anno. 
+
+
+Cos'è una funzione ricorsiva?: Una funzione che richiama se stessa. 
+
+
+#### Problema della torre di Anode
+Quali sono i casi base? Quando sono in grado di solvere senza dover richiamare l'algoritmo ricorsivo. 
+Tutti i casi per i quali l'algorimto ricorsivo non funziona sono considerati casi base
+
+```cpp
+void anode(int dis, int from, int to, int su){
+
+    if(dis > 1){
+
+    }else{
+
+    }
+}
+
+anode(5, 1, 3, 2);
+```
+
+#### Problema di Manathan
+```cpp
+__________(3,3)
+|__|__|__|
+|__|__|__|
+|__|__|__|
+(0,0)
+
+// risoluzione con la ricorsione
+
+// risoluzione con l'iterazione 
+
+
+// Es. in quanti modi posso costruireuna torre alta n di mattoncini
+// senza mai mettere due mattonicni rossi consecutivi?
+
+/*
+appoggiato mattoncino rosso: il successivo deve esssere per forza blue 
+appoggiato mattonicno blue: 
+*/
+
+```
+
+
+# 6_03_25
+
+```cpp
+    // esempio del gioco Anoid
+    int mattoni (){
+        if(){
+            if(){
+
+            }else{
+
+            }
+        } else {
+            return -1; // Zero fattoriale = 1; 
+        }
+    }
+```
+
+#### Ricerca binaria
+Ha lo scopo di ricercare all'interno di un vettore con assunzione che il vettore sia ordinato. (Possono esserci due o più elementi uguali)
+
+```cpp
+    // posso dividere il vettore in due e verificare se il numero cercato è > o <
+    void binary(){
+
+        return 0;
+    }
+
+```
+
+
+#### Tipo strutturato in C
+
+```c
+struct Person(){
+    char name[20];
+    int eta;
+}
+ Person p;
+ p.eta = 20;
+ string(p.nome, "Andrea");
+
+ Persona p2;
+ p2 = p;
+
+////////////////////
+
+
+
+struct Person2(){
+    char * nome;
+    int eta;
+}
+ Person2 p, q;
+ p.nome = new char[20];
+ string (Person2.nome, "Andrea");
+ 
+ q=p;
+ string(q.name, "pippo");
+
+ cout<<p.name;
+
+
+ // che cos'è la shallow copy VS deepcopy
+ // Per default è sempre Shallow copy
+
+ Person* punt = new Person;
+ punt -> eta = 48;
+ (*punt). et = 48;
+ p = *punt;
+
+```
+```cpp
+
+struct Persona {
+    string nome;
+    int eta;
+    void Presentati(){
+        cout<< "Mi chiamo" << nome;
+        cout <<"Ho"<<eta<<"Anna";
+    }
+}
+Persona p1, p2;
+p1. nome = "Andre";
+p1. eta = 40;
+p2. nome = "Marco";
+p2. eta = 30;
+
+p1.presentati();
+p2.presentati();
+
+```
+```cpp
+// Qualis sono i modificatori di visibilità
+// Private (Protected = Private sono in questo corso)
+// Public
+class Persona { 
+    // Quali sono le differenze tra struct e class (cpp)
+    // è la politica di visibilità di deafult
+    /*
+    Struct in (c), dafault() =
+    Class in (cpp), dafult() = 
+    */
+    private string nome;
+    public int eta;
+    void Presentati(){
+        cout<< "Mi chiamo" << nome;
+        cout <<"Ho"<<eta<<"Anna";
+    }
+    void setIdentita(string n, int e){
+        nome = n;
+        eta = e;
+    }
+}
+```

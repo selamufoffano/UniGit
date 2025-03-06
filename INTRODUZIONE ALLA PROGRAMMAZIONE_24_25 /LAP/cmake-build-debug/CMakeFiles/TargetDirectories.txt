@@ -1,3 +1,0 @@
-/home/selamu/Documents/UniGit/INTRODUZIONE ALLA PROGRAMMAZIONE_24_25 /LAP/cmake-build-debug/CMakeFiles/LAP.dir
-/home/selamu/Documents/UniGit/INTRODUZIONE ALLA PROGRAMMAZIONE_24_25 /LAP/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/selamu/Documents/UniGit/INTRODUZIONE ALLA PROGRAMMAZIONE_24_25 /LAP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
