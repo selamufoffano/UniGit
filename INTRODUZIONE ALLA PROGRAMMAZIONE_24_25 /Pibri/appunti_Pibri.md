@@ -41,3 +41,39 @@ int main(){
     return 0;
 }
 ```
+
+
+# 12_03_25
+#### Recursion
+
+Viene create ogni volta uno stack farme
+Errore stack-overflow
+```cpp
+    #include <iostream>
+#include <cassert>
+int climb(int n){
+    assert(n>= 0);
+    if(n==0){
+        return 0;
+    }
+    return 1 + climb(n-1);
+}
+
+int main(){
+    climb(7);
+    return 0;
+}
+```
+
+#### Trace diagram (methodo)
+
+#### Forward declaration?
+[link:](https://www.geeksforgeeks.org/what-are-forward-declarations-in-c/)
+
+# 14_03_25
+
+
+# 21_03_25
+#### Context Free Grammars (CFG)
+
+# 26_03_35
