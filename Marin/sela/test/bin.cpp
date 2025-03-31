@@ -57,7 +57,7 @@ int main(int, char* []) {
   // e li memorizza nella lista 
 
   for(int i=0; i < FloatToRead; ++i) {
-    TCell* Temp = List.First;
+    TCell* Temp = List.First; 
     cout << "Creazione di una nuova cella..." << endl;
     List.First = new TCell;    // new vuole il tipo di
                                // variabile da creare

@@ -862,3 +862,40 @@ listint::listint(const linstint& l){
     
 }
 ```
+
+# 27_03_25
+#### Priorità degli operatori
+
+sono compatibili pcell e listint abstract?
+
+#### differenza reference vs puntatori?
+
+#### Che cos'è una funzione cappello?
+
+# Domande per l'orale 
+lista di interi e cancellare le occorrenze di n a partire dalla fine (ultimo elemento della lista)
+
+2 4 7 9 (chiede di cancellare due elementi) e deve ritornare 
+2 4 (deve dire che ha cancellato il due elementi)
+
+deve essere codice ricorsivo:
+```cpp
+int list:: calricorsiva(pcell& l, int n){
+if(l != nullptr){
+    int k = calricorsiva(l->next, n);
+    if(k<n){
+        delete l;
+        l=nullptr;
+        return k+1;
+    }
+    else {
+        return n;
+    }
+
+} else {
+    return 0;
+}
+}
+```
+
+come posso farlo in modo iterativo 
