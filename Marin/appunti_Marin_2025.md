@@ -691,7 +691,7 @@ un dato che è presente nella memoria ma che non è raggiungibile in nussun modo
 #### Quali sono i metodi di assegnamento?
 right value temporaneo ad un left value
 
-#### Qual'è la differenza tra un copy costructor e un assegnamento?
+#### Qual'è la differenza tra un copy costructor vs assegnamento?
 ##### Quando vengono chiamati? 
 - In modmenti diversi. Uno esiste già mentre l'altro non esiste ancora
 
@@ -899,3 +899,65 @@ if(l != nullptr){
 ```
 
 come posso farlo in modo iterativo 
+
+
+# Liste concatenate doppiamente
+A differenza di una lista semplice (vuota o di un certo tipo), una lista
+doppiamente concatenta 
+Una lista doppiamente concatenata deve avere il puntatore alla prev = null
+
+in una lista semplice uso append
+#### Append vs prepend
+
+
+# 03_04_25
+Liste circolari
+Il computer usa una lista circolare per alternare l'eseguizione di diversi programmi
+
+Le liste circolanti non hanno un ordine di inserimento, quindi poco importa se l'elemento inserito è in posizione non ordinata
+
+Come posso fare una ricorsione su una lista circa (Pianto un paletto e calcolo la dista dal paletto)
+
+
+# 9_04_25
+
+# 10_04_25
+
+### Tipi di dato astratto
+Le pile, queue di dato abbiamo:-> inserimento (push, enqueue)
+                               -> estrazione (pop, dequeue)
+
+Pile -> LIFO Last In First Out
+Code -> FIFO First In First Out
+
+stack a; (Pila)
+a.push(10);
+a.push(30);
+a.pop(); // elimino 30
+a.push(40);
+a.pop() // elimino 40
+
+queue b; (Coda) c++ queue enqueue
+b.enqueue(30);
+b.enqueue(40);
+b.dequeue();// viene eliminato il 30
+b.enqueue(50);
+b.enqueue(30);
+b.dequeue();// viene eliminato il 40
+
+se io inserisco dalla testa (head) ho un tempo di esecuzione costante, mentre se inserisco dalla coda, il tempo è lineare al numero di elementi dello  stack
+
+assumendo di avere due puntatori head e tail il tempo è costante nell'inserimento tuttavia alla rimozione se parto dalla tail dovrò scorre tutta la lista per rimuovere
+
+l'inserimento e la rimozione sulla head in uno stack con liste semplici ha un tempo costante senza usare liste doppiamente concatenate
+
+in un vettore conviene mettere all'inizio o alla fine? deve avvenire alla fine del vettore. Con l'inserimento all'inizio del vettore dovremmo spostare tutti gli elementi
+
+Liste vs Vettori, chi è più veloci? l'unica differenza nel caso in cui faccio un push_back in un vettore saturo. La dimesione del vettore è definità dalla size, tuttavia il sistema operatore può decidere di allocare il vettore nella CAPACITY. Non è detto che il gestore della memoria dica si. La capacity raddoppia la dimensione del vettore. Un problema potrebbe essere che al vettore ci siano dei puntatori che puntano e quando il gestore della memoria decide di spostare il vettore per riallocarlo su una parte della memoria si creano conflitti e gli indirizzi cambiano
+
+I vettori sono meno efficenti rispetto alle liste dato il problema descritto sopra, abbiamo quindi ha una complessità lineare rispetto alle liste. solamente se eccediamo la size ed il gestore della memoria deve usare la CAPACITY. Se la size del vettore è sufficiente ha complessità 
+
+scelgo i vettori se mi serve l'accesso diretto agli elementi ad una poszione specifica (i) nel vettore ed il tempo è costante.
+Se voglio accedere all'emento della lista in poszione (i) il tempo è lineare dato che dovrò scorrere
+
+CONCLUSIONE: dipende dal problema, non c'è uno più veloce rispetto ad un altro
